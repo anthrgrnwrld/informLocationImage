@@ -14,6 +14,7 @@
 		3665E7321B000EFF00A38971 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3665E7301B000EFF00A38971 /* LaunchScreen.xib */; };
 		3665E73E1B000EFF00A38971 /* InformLocatationImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665E73D1B000EFF00A38971 /* InformLocatationImageTests.swift */; };
 		3665E7481B0014A700A38971 /* BeHereNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3665E7471B0014A700A38971 /* BeHereNow.jpg */; };
+		3665E74A1B06C95500A38971 /* informLocationImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3665E7491B06C95500A38971 /* informLocationImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		3665E73C1B000EFF00A38971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3665E73D1B000EFF00A38971 /* InformLocatationImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformLocatationImageTests.swift; sourceTree = "<group>"; };
 		3665E7471B0014A700A38971 /* BeHereNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BeHereNow.jpg; sourceTree = "<group>"; };
+		3665E7491B06C95500A38971 /* informLocationImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informLocationImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3665E7471B0014A700A38971 /* BeHereNow.jpg */,
+				3665E7491B06C95500A38971 /* informLocationImage.png */,
 				3665E7261B000EFF00A38971 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -199,6 +202,7 @@
 				3665E7321B000EFF00A38971 /* LaunchScreen.xib in Resources */,
 				3665E72F1B000EFF00A38971 /* Images.xcassets in Resources */,
 				3665E7481B0014A700A38971 /* BeHereNow.jpg in Resources */,
+				3665E74A1B06C95500A38971 /* informLocationImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

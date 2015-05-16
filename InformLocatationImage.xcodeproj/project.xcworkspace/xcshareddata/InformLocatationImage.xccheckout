@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C3DA079D-B76E-4757-A1ED-C2DF94E38545</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>916B772E09B07EB78A0A55AB11207670395C184D</key>
+		<string>https://github.com/anthrgrnwrld/informLocationImage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InformLocatationImage.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>916B772E09B07EB78A0A55AB11207670395C184D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/anthrgrnwrld/informLocationImage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>916B772E09B07EB78A0A55AB11207670395C184D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>916B772E09B07EB78A0A55AB11207670395C184D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InformLocatationImage</string>
+		</dict>
+	</array>
+</dict>
+</plist>
