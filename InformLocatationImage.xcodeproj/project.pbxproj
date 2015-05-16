@@ -13,6 +13,7 @@
 		3665E72F1B000EFF00A38971 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3665E72E1B000EFF00A38971 /* Images.xcassets */; };
 		3665E7321B000EFF00A38971 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3665E7301B000EFF00A38971 /* LaunchScreen.xib */; };
 		3665E73E1B000EFF00A38971 /* InformLocatationImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665E73D1B000EFF00A38971 /* InformLocatationImageTests.swift */; };
+		3665E7481B0014A700A38971 /* BeHereNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3665E7471B0014A700A38971 /* BeHereNow.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		3665E7371B000EFF00A38971 /* InformLocatationImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InformLocatationImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3665E73C1B000EFF00A38971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3665E73D1B000EFF00A38971 /* InformLocatationImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformLocatationImageTests.swift; sourceTree = "<group>"; };
+		3665E7471B0014A700A38971 /* BeHereNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BeHereNow.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		3665E7251B000EFF00A38971 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3665E7471B0014A700A38971 /* BeHereNow.jpg */,
 				3665E7261B000EFF00A38971 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,6 +198,7 @@
 				3665E72D1B000EFF00A38971 /* Main.storyboard in Resources */,
 				3665E7321B000EFF00A38971 /* LaunchScreen.xib in Resources */,
 				3665E72F1B000EFF00A38971 /* Images.xcassets in Resources */,
+				3665E7481B0014A700A38971 /* BeHereNow.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
