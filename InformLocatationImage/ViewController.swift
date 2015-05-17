@@ -16,7 +16,7 @@ class LocationImageView: UIImageView {
         self.init()
         self.location = 0       //初期はlocation# = 0
     }
-
+    
 }
 
 //二つのCGPointを持つクラス (イメージ移動の座標管理)
@@ -29,8 +29,8 @@ class TwoCGPoint {
 class ControlImageClass {
     var start: TwoCGPoint = TwoCGPoint()            //スタート時の画像座標とタッチ座標
     var destination: TwoCGPoint = TwoCGPoint()      //移動後(または移動途中の)画像座標とタッチ座標
-    var tag: Int!                                   //移動中の画像のTag保管用
-
+    var draggingView: UIView?
+    
     //startとdestinationからタッチ中の移動量を計算
     var delta: CGPoint {
         get {
@@ -39,7 +39,7 @@ class ControlImageClass {
             return CGPointMake(deltaX, deltaY)
         }
     }
-
+    
     //移動後(または移動中の)画像の座標取得用のメソッド
     func setMovedImagePoint() -> CGPoint {
         let imagePointX: CGFloat = start.imagePoint.x + delta.x
@@ -50,7 +50,7 @@ class ControlImageClass {
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageBeHereNow: LocationImageView!
     @IBOutlet weak var outputLocatedInfo: UILabel!
     @IBOutlet var locationLabelArray: [UILabel]!
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
         //画像の表示位置の決定
         for (index, val) in enumerate(locationLabelArray) {
             let tag = locationLabelArray[index].tag
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,13 +87,12 @@ class ViewController: UIViewController {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = touches.first as! UITouch
-        let tag = touch.view.tag
-
+        
         //タッチスタート時の座標情報を保存する
-        if tag == 1000 {
+        if touch.view is UIImageView {
             pointBeHereNow.start.imagePoint = imageBeHereNow.center
             pointBeHereNow.start.touchPoint = touch.locationInView(self.view)
-            pointBeHereNow.tag = 1000
+            pointBeHereNow.draggingView = touch.view
         } else {
             //Do nothing
         }
@@ -102,11 +101,10 @@ class ViewController: UIViewController {
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = touches.first as! UITouch
-        let tag = touch.view.tag
-
+        
         //移動後(または移動中)の座標情報を保存し、それらの情報から画像の表示位置を変更する
         //タッチされたviewのtagとpointBeHereNowに保存されたtagと等しい時のみ画像を動かす
-        if tag == pointBeHereNow.tag {
+        if touch.view == pointBeHereNow.draggingView {
             pointBeHereNow.destination.touchPoint = touch.locationInView(self.view)
             imageBeHereNow.center = pointBeHereNow.setMovedImagePoint()     //移動後の座標を取得するメソッドを使って画像の表示位置を変更
             
@@ -115,7 +113,7 @@ class ViewController: UIViewController {
         }
         
     }
- 
+    
     //各locationとの距離を管理するクラス
     class distanceClass {
         var distanceArray: [CGFloat] = []
@@ -125,11 +123,10 @@ class ViewController: UIViewController {
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         
         let touch = touches.first as! UITouch
-        let tag = touch.view.tag
-
+        
         //タッチ完了時に最も近いlocation位置へアニメーションで吸着する処理
         //タッチsaretaviewのtagとpointBeHereNowに保存されたtagと等しい時のみ画像を動かす
-        if tag == pointBeHereNow.tag {
+        if touch.view == pointBeHereNow.draggingView {
             
             var distance: distanceClass = distanceClass()   //locationとの距離を管理する変数
             distance = getDistance()                        //各locationの距離と最小値のindexを保存
@@ -144,7 +141,7 @@ class ViewController: UIViewController {
         
     }
     
-
+    
     //各locationとの距離とその最小値のIndexを保存するメソッド
     func getDistance() -> distanceClass {
         
@@ -160,11 +157,11 @@ class ViewController: UIViewController {
             }
             
         }
-
+        
         return distance
         
     }
- 
+    
     
     //2点の座標間の距離を取得するメソッド
     func getDistanceWithPoint1(point1: CGPoint, point2: CGPoint) -> CGFloat {
@@ -173,7 +170,7 @@ class ViewController: UIViewController {
         let distance = sqrt(distanceX * distanceX + distanceY * distanceY)
         return distance
     }
-
+    
     
     //最も近いlocationへ or 元の位置へアニメーションするメソッド
     func animateToLocationWithDistance(distance: distanceClass) {
@@ -190,7 +187,7 @@ class ViewController: UIViewController {
         
         animationWithImageView(imageBeHereNow, point: point)
     }
-
+    
     
     //引数1のUIImageViewを引数2の座標へアニメーションするメソッド
     func animationWithImageView(ImageView: UIImageView, point: CGPoint) {
@@ -199,7 +196,7 @@ class ViewController: UIViewController {
         })
         
     }
-
-
+    
+    
 }
 
