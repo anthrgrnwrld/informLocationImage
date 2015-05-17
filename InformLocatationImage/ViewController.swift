@@ -144,22 +144,15 @@ class ViewController: UIViewController {
     
     //各locationとの距離とその最小値のIndexを保存するメソッド
     func getDistance() -> distanceClass {
-        
         let distance: distanceClass = distanceClass()
         
-        for (index, val) in enumerate(locationLabelArray) {
-            distance.distanceArray.append(getDistanceWithPoint1(imageBeHereNow.center, point2: locationLabelArray[index].center))
-            
-            if distance.distanceArray[index] == minElement(distance.distanceArray) {
-                distance.minIndex = index
-            } else {
-                //Do nothing
-            }
-            
+        distance.distanceArray = locationLabelArray.map({self.getDistanceWithPoint1(self.imageBeHereNow.center, point2: $0.center)})
+        let (index, _) = reduce(enumerate(distance.distanceArray), (-1, CGFloat(FLT_MAX))) {
+            $0.1 < $1.1 ? $0 : $1
         }
-        
+        distance.minIndex = index
+
         return distance
-        
     }
     
     
