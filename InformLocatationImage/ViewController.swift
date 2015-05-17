@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageBeHereNow: LocationImageView!
     @IBOutlet weak var outputLocatedInfo: UILabel!
     @IBOutlet var locationLabelArray: [UILabel]!
-    var pointBeHereNow: ControlImageClass! = ControlImageClass()
+    var pointBeHereNow: ControlImageClass! = ControlImageClass()    //移動座標管理用変数を宣言
     
     override func viewDidLoad() {
         super.viewDidLoad()
