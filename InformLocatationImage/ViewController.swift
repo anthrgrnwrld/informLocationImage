@@ -29,7 +29,7 @@ class TwoCGPoint {
 class ControlImageClass {
     var start: TwoCGPoint = TwoCGPoint()            //スタート時の画像座標とタッチ座標
     var destination: TwoCGPoint = TwoCGPoint()      //移動後(または移動途中の)画像座標とタッチ座標
-    var draggingView: UIView?
+    var draggingView: UIView?                       //どの画像を移動しているかを保存
     
     //startとdestinationからタッチ中の移動量を計算
     var delta: CGPoint {
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         let touch = touches.first as! UITouch
         
         //移動後(または移動中)の座標情報を保存し、それらの情報から画像の表示位置を変更する
-        //タッチされたviewのtagとpointBeHereNowに保存されたtagと等しい時のみ画像を動かす
+        //タッチされたviewと保存されたviewが等しい時のみ画像を動かす
         if touch.view == pointBeHereNow.draggingView {
             pointBeHereNow.destination.touchPoint = touch.locationInView(self.view)
             imageBeHereNow.center = pointBeHereNow.setMovedImagePoint()     //移動後の座標を取得するメソッドを使って画像の表示位置を変更
